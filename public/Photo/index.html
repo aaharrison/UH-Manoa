@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UH Manoa Room Photos</title>
+    <meta charset='utf-8' />
+  </head>
+  <body>
+
+    <div style = "background-color: #1f4859; padding-top: 5px; padding-bottom: 2px; height: 55px;">
+      <img style = "height: 51.14px; width: 146.3px; display: inline-block; margin-left: 5px; float: left; vertical-align: middle;" src = "http://universityofhawaii.myuvn.com/wp-content/uploads/sites/42/2017/01/UHMLogoWhite.png">
+      <img style = "height: 37px; width: 171px; display: inline-block; float: right; vertical-align: middle;" src = "http://mkthinkstrategy.info/mklogo_white.png">
+    </div>
+
+    <div id = "Holder" style = "margin:0 auto;">
+
+      <div class="tab">
+      <!-- style = "height: 1000px; width: 1200px;" -->
+        <!-- <button class="tablinks" onclick="openHome()"> Home </button> -->
+        <button class="tablinks" onclick="openTableau()"> Data </button>
+        <button class="tablinks" style = "background-color: #ccc;"> Room / Photos </button>
+      </div>
+
+
+      <div style = "height: 1000px;"> </div>
+
+
+    <!--spinner-->
+    <div id="spin-area"></div>
+
+    <!--buttons to initiate auth sequence-->
+    <div id="authorize-modal">
+      <button id="authorize-button">CONNECT</button>
+    </div>
+
+    <!--CONTENT AREA-->
+    <div id="content-area" style="display:none;">
+      <!--room info-->
+      <div id="room-info" style="display:none;">
+
+        <div class="category-spacer">AIM DATABASE</div>
+        <div class="info-label aim-label" id="flr_lvlh">Floor Level</div>
+        <div class="info-receptacle aim-receptacle" id="flr_lvlr"></div>
+        <div class="info-label aim-label" id="rm_sqfth">Room SqFt:</div>
+        <div class="info-receptacle aim-receptacle" id="rm_sqftr"></div>
+        <div class="info-label aim-label" id="rm_icaph">Instr. Capacity:</div>
+        <div class="info-receptacle aim-receptacle" id="rm_icapr"></div>
+        <div class="info-label aim-label" id="nces_cath">NCES Use Category:</div>
+        <div class="info-receptacle aim-receptacle" id="nces_catr"></div>
+        <div class="info-label aim-label" id="nces_deth">NCES Use Detail:</div>
+        <div class="info-receptacle aim-receptacle" id="nces_detr"></div>
+        <div class="info-label aim-label" id="org1h">Org Assignment (1):</div>
+        <div class="info-receptacle aim-receptacle" id="org1r"></div>
+        <div class="info-label aim-label" id="org2h">Org Assignment (2):</div>
+        <div class="info-receptacle aim-receptacle" id="org2r"></div>
+        <div class="info-label aim-label" id="org3h">Org Assignment (3):</div>
+        <div class="info-receptacle aim-receptacle" id="org3r"></div>
+        <div class="info-label aim-label" id="org4h">Org Assignment (4):</div>
+        <div class="info-receptacle aim-receptacle" id="org4r"></div>
+        <div class="info-label aim-label" id="org5h">Org Assignment (5):</div>
+        <div class="info-receptacle aim-receptacle" id="org5r"></div>
+        <div class="info-label aim-label" id="org6h">Org Assignment (6):</div>
+        <div class="info-receptacle aim-receptacle" id="org6r"></div>
+        <div class="info-label aim-label" id="org7h">Org Assignment (7):</div>
+        <div class="info-receptacle aim-receptacle" id="org7r"></div>
+        <div class="info-label aim-label" id="org8h">Org Assignment (8):</div>
+        <div class="info-receptacle aim-receptacle" id="org8r"></div>
+
+        <div class="category-spacer">SURVEY ASSESSMENT (SP 2017)</div>
+        <div class="info-label survey-label" id="accessh">Survey Record:</div>
+        <div class="info-receptacle survey-receptacle" id="accessr"></div>
+        <div class="info-label survey-label" id="nat_venth">Passive Vent. Quality:</div>
+        <div class="info-receptacle survey-receptacle" id="nat_ventr"></div>
+        <div class="info-label survey-label" id="art_venth">Active Vent. Quality:</div>
+        <div class="info-receptacle survey-receptacle" id="art_ventr"></div>
+        <div class="info-label survey-label" id="ac_sysh">AC Systems:</div>
+        <div class="info-receptacle survey-receptacle" id="ac_sysr"></div>
+        <div class="info-label survey-label" id="fansh">Fan Systems:</div>
+        <div class="info-receptacle survey-receptacle" id="fansr"></div>
+        <div class="info-label survey-label" id="fenesh">Fenestration:</div>
+        <div class="info-receptacle survey-receptacle" id="fenesr"></div>
+        <div class="info-label survey-label" id="nat_lighth">Natural Light Quality:</div>
+        <div class="info-receptacle survey-receptacle" id="nat_lightr"></div>
+        <div class="info-label survey-label" id="art_lighth">Art. Light Quality:</div>
+        <div class="info-receptacle survey-receptacle" id="art_lightr"></div>
+        <div class="info-label survey-label" id="light_conth">Lighting Controls:</div>
+        <div class="info-receptacle survey-receptacle" id="light_contr"></div>
+        <div class="info-label survey-label" id="acous_qualh">Acoustic Quality:</div>
+        <div class="info-receptacle survey-receptacle" id="acous_qualr"></div>
+        <div class="info-label survey-label" id="acous_imph">Acoustic Feats:</div>
+        <div class="info-receptacle survey-receptacle" id="acous_impr"></div>
+        <div class="info-label survey-label" id="num_seatsh">Number of Seats:</div>
+        <div class="info-receptacle survey-receptacle" id="num_seatsr"></div>
+        <div class="info-label survey-label" id="seat_flexh">Seating Flexibility:</div>
+        <div class="info-receptacle survey-receptacle" id="seat_flexr"></div>
+        <div class="info-label survey-label" id="room_feath">Room Features:</div>
+        <div class="info-receptacle survey-receptacle" id="room_featr"></div>
+        <div class="info-label survey-label" id="pct_storh">% Used as Storage:</div>
+        <div class="info-receptacle survey-receptacle" id="pct_storr"></div>
+        <div class="info-label survey-label" id="pct_niuh">% Not in Use:</div>
+        <div class="info-receptacle survey-receptacle" id="pct_niur"></div>
+      </div>
+
+      <!--building selection-->
+      <div id="bButton" style="display:block" onclick="toggleBldgButton();">SELECT BUILDING</div>
+      <i class="material-icons" id="bResetIcon" style="display:none;" onclick="resetBldgButton();">close</i>
+      <form id="bForm">
+        <input type="text" id="bSearch" autocomplete="off" placeholder="SELECT BUILDING" onkeyup="filterBldgs();">
+        <select id="bSelect" size="5" onchange="toggleBldgButton(value);"></select>
+        <select id="bSelectHidden" style="display:none"></select>
+      </form>
+
+      <!--room selection-->
+      <div id="rButton" style="display:none" onclick="toggleRoomButton();">SELECT ROOM</div>
+      <i class="material-icons" id="rResetIcon" style="display:none;" onclick="resetRoomButton();">close</i>
+      <form id="rForm">
+        <input type="text" id="rSearch" autocomplete="off" placeholder="SELECT ROOM" onkeyup="filterRooms();">
+        <select id="rSelect" size="5" onchange="toggleRoomButton(value); pullRoomData(value); listRoomPhotos(value);"></select>
+        <select id="rSelectHidden" style="display:none"></select>
+      </form>
+
+      <!--full photo viewer-->
+      <div id="photo-frame"></div>
+
+      <!--thumbnail viewer-->
+      <div id="thumbnail-container">
+        <div id="thumbnail-liner"></div>
+      </div>
+
+      <!--no-photo modal-->
+      <div id="nophoto-modal"><div id="nophoto-message">NO SURVEY PHOTOS RECORDED</div></div>
+
+
+    </div>
+    </div>
+
+    <!-- Start Intercom  -->
+<!--     <script>
+      window.intercomSettings = {
+        app_id: "l4ii2bel"
+      };
+    </script>
+    <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/l4ii2bel';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script> -->
+    <!-- End Intercom -->
+
+    <hr>
+    <img src = "http://www.onsetcomp.com/files/partner-landing-pages/roundhouse-logo-lg.jpg" style = "width: 236.25px; height: 60.75px; cursor: pointer;" onclick = "openRH1()">
+<!--     <a href = "http://www.roundhouseone.com/"> About Us  |  </a>
+    <a href = "http://www.roundhouseone.com/capabilities.html"> Solutions  |  </a>
+    <a href = "http://www.roundhouseone.com/team.html"> Team  |  </a>
+    <a href = "http://www.roundhouseone.com/careers.html"> Careers </a> -->
+
+    <button type = "button" onclick = "logout()" style = "width: 150px; height: 50px; background-color: #1f4859; border-radius: 5px; color: white; font-family: 'Lucida Console'; font-size: 12px; margin-top: 10px; float: right;"> Log Out </button>
+
+    <!-- Footer Added -->
+    <p style = "color: #6a6b6d; font-family: arial;"> MKThink proprietary. Do not distribute materials without written permission or reproduce any part without proper citation </p>
+
+    <p style = "margin-left: 50%; color: red; font-size: 30px; font-family: arial"> DRAFT </p>
+
+    <!--scripts + styles-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.0.1/spin.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+      <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+      <script src="init.js"></script>
+      <script async defer src="https://apis.google.com/js/api.js"
+        onload="this.onload=function(){};handleClientLoad()"
+        onreadystatechange="if (this.readyState === 'complete') this.onload()">
+      </script>
+
+      <link href="styles.css" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </body>
+ </html>
+
+
+   

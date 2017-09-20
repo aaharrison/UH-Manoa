@@ -1,0 +1,83 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<title> UH Manoa Facilities Analysis </title>
+
+	<script type = "text/javascript" src = "https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+	<script type = "text/javascript"></script>
+
+	
+	
+</head>
+
+<body onload = "initialViz();" onresize = "resize(where);">
+
+	<div style = "background-color: #1f4859; padding-top: 5px; padding-bottom: 2px; height: 55px;">
+		<img style = "height: 51.14px; width: 146.3px; display: inline-block; margin-left: 5px; float: left; vertical-align: middle;" src = "http://universityofhawaii.myuvn.com/wp-content/uploads/sites/42/2017/01/UHMLogoWhite.png">
+		<img style = "height: 37px; width: 171px; display: inline-block; float: right; margin-right: 5px; vertical-align: middle;" src = "http://mkthinkstrategy.info/mklogo_white.png">
+	</div>
+
+	<div class="tab">
+		<!-- <button class="tablinks" onclick="openHome()"> Home </button> -->
+		<button class="tablinks" style = "background-color: #ccc;"> Data </button>
+		<button class="tablinks" onclick="openPhoto()"> Room / Photos </button>
+	</div>
+
+	<div style = "margin-top: 5px;">
+			<button id = "inventory" class="tablinks" onclick = "openTab(event, 'workbook2'); inventoryViz();" style = "cursor: pointer; width: 16.5%; background-color: #ccc;"> Inventory </button>
+			<button id = "department" class="tablinks" onclick = "openTab(event, 'workbook1'); departmentViz();" style = "cursor: pointer; width: 16.5%; background-color: #ccc;"> Department </button>
+			<button id = "instruction" class="tablinks" onclick = "openTab(event, 'workbook3'); instructionViz();" style = "cursor: pointer; width: 16.5%; background-color: #ccc;"> Instruction </button>
+			<!-- <button class="tablinks" onclick = "openTab(event, 'workbook4')" style = "cursor: pointer; width: 200px;"> Instructional Capacity </button> -->
+	</div>
+
+	<div id = "holder1" style = "margin: 0 auto;"></div>
+
+	<div id = "workbook1" class = "tabcontent">
+  		<div id = "holder1" style = "margin: 0 auto;"></div>
+  	</div>
+
+  	<div id = "workbook2" class = "tabcontent">
+  		<div id = "holder2" style = "margin: 0 auto;"></div>
+  	</div>
+
+  	  <div id = "workbook3" class = "tabcontent">
+  		<div id = "holder3" style = "margin: 0 auto;"></div>
+  	</div>
+
+  	<div id = "workbook4" class = "tabcontent">
+  		<div id = "holder3" style = "margin: 0 auto;">  		
+  			Work In Progress
+  		</div>
+  	</div>
+
+  	<!-- Start Intercom  -->
+<!--   	<script>
+      window.intercomSettings = {
+        app_id: "l4ii2bel"
+      };
+    </script>
+    <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/l4ii2bel';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script> -->
+    <!-- End Intercom -->
+
+	<hr>
+	<img src = "http://www.onsetcomp.com/files/partner-landing-pages/roundhouse-logo-lg.jpg" style = "width: 236.25px; height: 60.75px; cursor: pointer;" onclick = "openRH1()">
+<!-- 	<a href = "http://www.roundhouseone.com/"> About Us  |  </a>
+	<a href = "http://www.roundhouseone.com/capabilities.html"> Solutions  |  </a>
+	<a href = "http://www.roundhouseone.com/team.html"> Team  |  </a>
+	<a href = "http://www.roundhouseone.com/careers.html"> Careers </a> -->
+
+	<button type = "button" onclick = "logout()" style = "width: 150px; height: 50px; background-color: #1f4859; border-radius: 5px; color: white; font-family: 'Lucida Console'; font-size: 12px; margin-top: 10px; float: right;"> Log Out </button>
+
+	<!-- Footer Added -->
+	<p style = "color: #6a6b6d; font-family: arial;"> MKThink proprietary. Do not distribute materials without written permission or reproduce any part without proper citation </p>
+
+	<p style = "margin-left: 50%; color: red; font-size: 30px; font-family: arial;"> DRAFT </p>
+
+
+
+<link rel = "stylesheet" href = "style2.css">
+<script type = "text/javascript" src = "script2.js"></script>
+
+</body>
+
+</html>
